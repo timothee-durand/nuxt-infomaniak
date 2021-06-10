@@ -39,6 +39,6 @@ jobs:
           # execute commands on ssh
           script: |
             cd ./sites/tests.timotheedurand.fr/
-            git fetch https://github.com/timothee-durand/nuxt-infomaniak.git
+            git fetch
             npm i
             npm run generate
