@@ -24,15 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: ls -a via ssh
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-            ls
-          host: ${{ secrets.HOST }}
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PSW }}
           
       - name: ssh-pipeline
         # You may pin to the exact commit or the version.
@@ -46,7 +37,9 @@ jobs:
           # ssh remote password
           pass: ${{ secrets.SSH_PSW }}
           # execute commands on ssh
-         # script: # optional
+          script: |
+            ls -a
+            
             
 
 
