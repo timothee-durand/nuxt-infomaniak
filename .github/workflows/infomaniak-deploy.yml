@@ -31,7 +31,7 @@ jobs:
 
       - name: Git fetch
         uses: fifsky/ssh-action@master
-          with:
+        with:
             command: |
               ls
             host: ${{ secrets.HOST }}
