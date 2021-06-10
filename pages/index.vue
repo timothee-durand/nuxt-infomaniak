@@ -2,7 +2,7 @@
   <d-container>
     <c-stack my="24" spacing="12">
       <c-heading as="h1" font-size="8rem" text-align="center">
-        Dark
+        TEST
       </c-heading>
       <c-text font-size="3xl" text-align="center">
         An opinionated, dark-themed Nuxt.js &amp; Chakra UI Vue GitHub
