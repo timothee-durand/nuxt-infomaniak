@@ -37,28 +37,15 @@ jobs:
           
       - run : ls
       
-      - name: Deploy to my ❤️
-        uses: up9cloud/action-rsync@v1.1
-        env:
-          HOST: example.com
-          KEY: ${{secrets.SSH_KEY}}
-          TARGET: /sites/tests.timotheedurand.fr/
-          SOURCE: ./dist
-          VERBOSE: true
-          USER: ${{ secrets.SSH_USER }}
-          PRE_SCRIPT: |
-            echo start at:
-            date -u
-          POST_SCRIPT: "echo done at: && date -u"
-
-      #- name: Deploying
-       # uses: appleboy/ssh-action@master
-        #with:
-         # host: ${{ secrets.HOST }}
-          #username: ${{ secrets.SSH_USER }}
-          #password: ${{ secrets.SSH_PSW }}
-          #script: |
-           # cd ./sites/tests.timotheedurand.fr/
-            #git fetch
+      - name: Deployement
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: /sites/tests.timotheedurand.fr/
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{secrets.SSH_KEY}}
+  
           
           
