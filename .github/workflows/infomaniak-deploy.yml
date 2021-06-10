@@ -30,6 +30,11 @@ jobs:
         with:
           args: install
           
+      - name: Generate
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: generate
+          
       - run : ls
 
       - name: Deploying
