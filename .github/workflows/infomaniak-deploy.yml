@@ -25,14 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Git fetch
+      - name: ls -a via ssh
         uses: fifsky/ssh-action@master
         with:
-            command: |
-              ls
-            host: ${{ secrets.HOST }}
-            user: ${{ secrets.SSH_USER }}
-            key: ${{ secrets.SSH_PSW }}
+          command: |
+            ls
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PSW }}
+
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
