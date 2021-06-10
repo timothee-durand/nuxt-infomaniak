@@ -31,10 +31,10 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PSW }}
+          username: ${{ secrets.SSH_PSW }}
+          key: ${{ secrets.SSH_USER }}
           script: |
-            ls
+            ls -a
 
           
           
