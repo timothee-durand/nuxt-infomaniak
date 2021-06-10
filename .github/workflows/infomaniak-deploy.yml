@@ -29,6 +29,8 @@ jobs:
         uses: CultureHQ/actions-yarn@master
         with:
           args: install
+          
+      - run : ls
 
       - name: Deploying
         uses: appleboy/ssh-action@master
