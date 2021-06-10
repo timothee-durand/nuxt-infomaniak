@@ -43,8 +43,8 @@ jobs:
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -avzr --delete
-          path: dist/
-          remote_path: /sites/tests.timotheedurand.fr/
+          path: ./dist/
+          remote_path: ./sites/tests.timotheedurand.fr/
           remote_host: ${{ secrets.HOST }}
           remote_user: ${{ secrets.SSH_USER }}
           remote_key: ${{secrets.SSH_KEY}}
