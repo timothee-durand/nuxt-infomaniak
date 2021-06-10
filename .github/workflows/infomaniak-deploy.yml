@@ -34,7 +34,10 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PSW }}
           script: |
-            ls -a
+            cd ./sites/tests.timotheedurand.fr/
+            git fetch
+            npm i
+            npm run generate
 
           
           
