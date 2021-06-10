@@ -38,6 +38,7 @@ jobs:
           pass: ${{ secrets.SSH_PSW }}
           # execute commands on ssh
           script: |
+            cd ./sites/tests.timotheedurand.fr/
             ls -a
             
             
